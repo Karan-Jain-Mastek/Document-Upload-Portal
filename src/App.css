@@ -1,38 +1,326 @@
-.App {
-  text-align: center;
+/* General styles for the app */
+body {
+  font-family: 'Aptos', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-right: 44px;
+  padding-left: 44px;
+  background-color: #2e3b4e;
+  color: white;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left-header {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right-header {
+  font-weight: normal;
+}
+
+.header-logo {
+  width: 30px; /* Adjust width based on your image size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some space between the logo and the text */
+}
+
+.requirement-row {
+  margin: 20px 0;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  color: rgb(95, 95, 99);
+  margin-left: 43px;
+}
+
+.requirement-row h2 {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.content {
+  display: flex;
+  height: calc(100vh - 120px);
+}
+
+.left-side {
+  width: 30%;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.right-side {
+  width: 70%;
+  margin-right: 20px;
+}
+
+.grey-box {
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.upload-header {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.no-file {
+  color: grey;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.file-upload-container {
+  text-align: left;
+}
+
+.attach-file-btn {
+  margin-top: 22px;
+  font-weight: bold; 
+}
+
+.attach-file-btn input {
+  display: none;
+}
+
+.file-upload-label {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.file-upload-label:hover {
+  background-color: #041a31;
+}
+
+.get-report-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-left: 13px; 
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+.get-report-btn:hover {
+  background-color: #041a31;
+}
+
+.grey-box-right {
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.white-box {
+  background-color: white;
+  padding: 5px;
+  margin: 3px 0;
+  border-radius: 5px;
+  height: 200px;  /* Increase the height of the box as needed */
+}
+
+.upper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy-sql-btn,
+.clear-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  margin-top: 10px; 
+  border: none;
+  height: 40px;  /* Fix the height of the buttons */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+.clear-btn {
+  margin-right: 10px; 
+}
+
+.copy-sql-btn:hover,
+.clear-btn:hover {
+  background-color: #041a31;
+}
+
+.lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px; 
+}
+
+.requirement-text {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold; 
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #041a31;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  margin-top: 36px;
+}
+
+.timeline {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Align points to the left */
+  position: relative;
+  margin-left: 20px; /* Push the timeline a bit to the left */
+}
+
+.timeline-point {
+  background-color: transparent;
+  color: rgb(151, 151, 151);
+  font-size: 14px;
+  text-align: left; /* Align text to the left */
+  position: relative;
+  padding-left: 30px; /* Space for the point */
+  font-weight: bold;
+  margin-bottom: 30px; /* Space between points */
+}
+
+.timeline-point:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5px; /* Position the point to the left of the text */
+  width: 12px;
+  height: 12px;
+  background-color: darkgray;
+  border-radius: 50%; /* Make the point a circle */
+}
+
+.timeline-connector {
+  width: 2px;
+  height: 100px; /* Adjust the height to stop at the last point */
+  background-color: darkgray;
+  position: absolute;
+  left: 10px; /* Connectors start from the left of the point */
+  top: 0; /* Start from the top of the container */
+}
+
+.timeline-point:first-child .timeline-connector {
+  display: none;
+}
+
+.timeline-point:last-child .timeline-connector {
+  display: none;
+}
+
+.file-status-box {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.file-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.file-icon-image {
+  width: 100%;
+  height: auto;
+}
+
+.file-details {
+  flex-grow: 1;
+}
+
+.file-name {
+  font-weight: bold;
+}
+
+.upload-date, .interaction-id {
+  color: grey;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background-color: #f44336;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.delete-btn:hover {
+  background-color: #d32f2f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.generate-sql-chatbot-row {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 20px; 
+}
+
+.generate-sql-chatbot-row h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Middle White Box (Empty) */
+.white-box.middle {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  height: 20px; 
+}
+
+/* Lower White Box (Empty) */
+.white-box.lower {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align SEND button to the right */
+  margin: 15px 0;
+  border-radius: 5px;
+  height: 20px; 
+  margin-bottom: 0px; 
 }
