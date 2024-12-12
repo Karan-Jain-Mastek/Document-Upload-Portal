@@ -15,7 +15,7 @@ function App() {
   const [sqlFile, setSqlFile] = useState(null); // State to manage SQL file content
   const fileInputRef = useRef(null);
 
-  const apiUrl = 'https://rd-upload-portal.vercel.app' || 'http://localhost:5000';  // API URL (adjust for Vercel environment)
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // API URL (adjust for Vercel environment)
   const ftpApiUrl = process.env.REACT_APP_FTP_API_URL;
   const username = process.env.REACT_APP_AUTH_FTP_API_USERNAME;
   const password = process.env.REACT_APP_AUTH_FTP_API_PASSWORD;
@@ -24,7 +24,7 @@ function App() {
 
   const generateInteractionId = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/api/generate-interaction-id`);
+      const response = await axios.get(`${apiUrl}/generate-interaction-id`);
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
     } catch (error) {
@@ -49,7 +49,7 @@ function App() {
     
     try {
       // Fetch the interaction ID from the backend
-      const response = await axios.get(`${apiUrl}/api/generate-interaction-id`);
+      const response = await axios.get(`${apiUrl}/generate-interaction-id`);
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
 
@@ -81,7 +81,7 @@ function App() {
       });
 
       // Make the post request to upload the files
-      const uploadResponse = await axios.post(`${apiUrl}/api/upload`, formData, {
+      const uploadResponse = await axios.post(`${apiUrl}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -110,7 +110,7 @@ function App() {
         return;
       }
 
-      const response = await axios.post(`${apiUrl}/api/delete-file`, {
+      const response = await axios.post(`${apiUrl}/delete-file`, {
         interactionId: fileObj.interactionId,
       });
 
