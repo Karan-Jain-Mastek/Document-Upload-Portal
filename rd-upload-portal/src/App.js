@@ -24,7 +24,7 @@ function App() {
 
   const generateInteractionId = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/server/api/generate-interaction-id`);
+      const response = await axios.get(`${apiUrl}/api/generate-interaction-id`);
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
     } catch (error) {
@@ -49,7 +49,7 @@ function App() {
     
     try {
       // Fetch the interaction ID from the backend
-      const response = await axios.get(`${apiUrl}/server/api/generate-interaction-id`);
+      const response = await axios.get(`${apiUrl}/api/generate-interaction-id`);
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
 
@@ -81,7 +81,7 @@ function App() {
       });
 
       // Make the post request to upload the files
-      const uploadResponse = await axios.post(`${apiUrl}/server/api/upload`, formData, {
+      const uploadResponse = await axios.post(`${apiUrl}/api/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -110,7 +110,7 @@ function App() {
         return;
       }
 
-      const response = await axios.post(`${apiUrl}/server/api/delete-file`, {
+      const response = await axios.post(`${apiUrl}/api/delete-file`, {
         interactionId: fileObj.interactionId,
       });
 
