@@ -10,6 +10,12 @@
         "use": "@vercel/static-build"
       }
     ],
+
+    "build": {
+    "command": "npm run build",
+    "outputDirectory": "build"
+    },
+    
     "routes": [
       {
         "src": "/api/(.*)",
