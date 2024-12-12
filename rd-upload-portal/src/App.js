@@ -15,7 +15,7 @@ function App() {
   const [sqlFile, setSqlFile] = useState(null); // State to manage SQL file content
   const fileInputRef = useRef(null);
 
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // API URL (adjust for Vercel environment)
+  const apiUrl = 'https://rd-upload-portal.vercel.app/api' || 'http://localhost:5000';  // API URL (adjust for Vercel environment)
   const ftpApiUrl = process.env.REACT_APP_FTP_API_URL;
   const username = process.env.REACT_APP_AUTH_FTP_API_USERNAME;
   const password = process.env.REACT_APP_AUTH_FTP_API_PASSWORD;
