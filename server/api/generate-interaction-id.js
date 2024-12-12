@@ -6,7 +6,7 @@ require('dotenv').config();
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/documentDB';
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => console.error('MongoDB connection error:', err));    
 
 module.exports = async (req, res) => {
   const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app/';  // Replace with your frontend URL
