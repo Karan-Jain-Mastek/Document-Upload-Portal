@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import './App.css';
 import axios from 'axios';
 
-function App() {
+function App() {  
   const [files, setFiles] = useState([]);
   const [interactionId, setInteractionId] = useState(null);
   const [user, setUser] = useState('john_doe');
