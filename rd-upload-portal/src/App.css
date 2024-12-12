@@ -1,0 +1,406 @@
+body {
+  font-family: 'Aptos', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-right: 44px;
+  padding-left: 44px;
+  background-color: #2e3b4e;
+  color: white;
+  font-size: 20px;
+}
+
+.left-header {
+  font-weight: bold;
+}
+
+.right-header {
+  font-weight: normal;
+}
+
+.header-logo {
+  width: 30px; /* Adjust width based on your image size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some space between the logo and the text */
+}
+
+.requirement-row {
+  margin: 20px 0;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  color: rgb(95, 95, 99);
+  margin-left: 43px;
+}
+
+.requirement-row h2 {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.content {
+  display: flex;
+  height: calc(100vh - 120px);
+}
+
+.left-side {
+  width: 30%;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.right-side {
+  width: 70%;
+  margin-right: 20px;
+}
+
+.grey-box {
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.upload-header {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.no-file {
+  color: grey;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.file-upload-container {
+  text-align: left;
+}
+
+.attach-file-btn {
+  margin-top: 22px;
+  font-weight: bold; 
+}
+
+.attach-file-btn input {
+  display: none;
+}
+
+.file-upload-label {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.file-upload-label:hover {
+  background-color: #041a31;
+}
+
+.error-message {
+  color: #a51010; /* Red color for the error message */
+  font-weight: bold; /* Make the font bold */
+  font-size: 14px; /* Adjust the font size */
+  margin-top: 30px; /* Space between the button and the error message */
+  padding: 5px;
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb; /* Border with light red color */
+  border-radius: 5px; /* Rounded corners */
+  text-align: left; /* Center align the text */
+}
+
+.get-report-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-left: 13px; 
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+.get-report-btn:hover {
+  background-color: #041a31;
+}
+
+.grey-box-right {
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.white-box {
+  background-color: white;
+  padding: 5px;
+  margin: 3px 0;
+  border-radius: 5px;
+  height: 200px;  /* Increase the height of the box as needed */
+}
+
+.upper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy-sql-btn,
+.clear-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  margin-top: 10px; 
+  border: none;
+  height: 36px;  /* Fix the height of the buttons */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+.clear-btn {
+  margin-right: 10px; 
+}
+
+.copy-sql-btn:hover,
+.clear-btn:hover {
+  background-color: #041a31;
+}
+
+.lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px; 
+}
+
+.requirement-text {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  background-color: #085db8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold; 
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #041a31;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  margin-top: 36px;
+  margin-bottom: 12px; 
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align points to the left */
+  position: relative;
+  margin-left: 20px; /* Push the timeline a bit to the left */
+}
+
+.timeline-point {
+  background-color: transparent;
+  color: rgb(151, 151, 151);
+  font-size: 14px;
+  text-align: left; /* Align text to the left */
+  position: relative;
+  padding-left: 30px; /* Space for the point */
+  font-weight: bold;
+  z-index: 2; /* Ensures the point is above the connector */
+}
+
+.timeline-point:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5px; /* Position the point to the left of the text */
+  width: 12px;
+  height: 12px;
+  background-color: darkgray;
+  border-radius: 50%; /* Make the point a circle */
+  z-index: 3; /* Ensure the circle is above the connector */
+}
+
+.timeline-connector {
+  width: 2px;
+  height: 100px; /* Adjust the height to stop at the last point */
+  background-color: darkgray;
+  position: absolute;
+  left: 10px; /* Connectors start from the left of the point */
+  top: 0; /* Start from the top of the container */
+  z-index: 1; /* Connector should be behind the point */
+}
+
+.timeline-point:first-child .timeline-connector {
+  display: none;
+}
+
+.timeline-point:last-child .timeline-connector {
+  display: none;
+}
+
+.timeline-point:not(:last-child) {
+  margin-bottom: 30px; /* Adds space between points */
+}
+
+.uploaded {
+  color: black;
+}
+
+.timeline-point.uploaded {
+  color: black;
+  font-weight: bold;
+}
+
+.timeline-point.uploaded::before {
+  background-color: black; /* This changes the color of the point itself (the circle) */
+}
+
+.file-status-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.file-icon {
+  width: 39px;
+  font-size: 30px; 
+  height: 39px;
+  margin-right: 13px; 
+  margin-left: 3px; 
+}
+
+.file-icon-image {
+  width: 100%;
+  height: auto;
+}
+
+.file-details {
+  flex-grow: 1;
+}
+
+.file-name {
+  font-weight: bold;
+  font-size: 15px; 
+  padding-right: 10px; 
+  padding-top: 4px; 
+}
+
+.upload-date, .interaction-id {
+  color: grey;
+  font-size: 14px;
+}
+
+.upload-date {
+  margin-top: 5px; 
+}
+
+.interaction-id {
+  margin-bottom: 4px; 
+}
+
+.delete-btn {
+  background: none; /* Remove background */
+  border: none;
+}
+
+.delete-btn .delete-icon {
+  width: 38px;  /* Adjust the size of the image */
+  height: 29px;
+}
+
+.generate-sql-chatbot-row {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 20px; 
+}
+
+.generate-sql-chatbot-row h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Middle White Box (Empty) */
+.white-box.middle {
+  display: flex; 
+  background-color: white;
+  padding: 20px;
+  gap: 20px; /* Add spacing between items */
+  margin: 10px 0;
+  flex-direction: row; /* Align elements horizontally */
+  border-radius: 5px;
+  height: auto; 
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Lower White Box (Empty) */
+.white-box.lower {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align SEND button to the right */
+  margin: 15px 0;
+  border-radius: 5px;
+  height: 20px; 
+  margin-bottom: 0px; 
+  width: 650px; 
+}
+
+.white-box.middle img {
+  max-height: 50px; /* Set the maximum height for the image to fit */
+  max-width: 50px; /* Set the maximum width for the image to fit */
+}
+
+.white-box.middle .text {
+  font-size: 16px; /* Adjust the font size of the text */
+  margin-top: 8px; 
+}
+
+.white-box.middle .buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.white-box.middle .button {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: bold; 
+  background-color: #3f5a7e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.white-box.middle .button:hover {
+  background-color: #0056b3;
+}
+
+.__intelli_main-button {
+  margin-right: 25px !important; 
+}
