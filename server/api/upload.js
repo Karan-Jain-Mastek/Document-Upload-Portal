@@ -2,7 +2,6 @@
 const multer = require('multer');
 const { BlobServiceClient } = require('@azure/storage-blob');
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 // MongoDB connection
 const mongoUri = process.env.MONGO_URI;
