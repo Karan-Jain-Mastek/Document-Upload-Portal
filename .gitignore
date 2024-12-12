@@ -1,12 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Ignore .env files in rd-upload-portal and server folders
-.rd-upload-portal/.env
-server/.env
-
-# Ignore the entire server folder
-server/
-
 # dependencies
 /node_modules
 /.pnp
