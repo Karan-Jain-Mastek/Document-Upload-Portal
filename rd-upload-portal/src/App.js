@@ -99,7 +99,7 @@ function App() {
   const handleDeleteFile = async () => {
     try {
       if (files.length === 0) {
-        setErrorMessage('No file to delete');
+        setErrorMessage('No file to delete');     
         return;
       }
 
