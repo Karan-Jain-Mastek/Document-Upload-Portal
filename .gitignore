@@ -4,6 +4,10 @@
 client/.env
 server/.env
 
+# ignore the server folder files
+server/server.js
+server/testQuery.js
+
 # dependencies
 node_modules/
 /.pnp
