@@ -31,7 +31,7 @@ function App() {
       console.error('Error generating interaction ID:', error.response ? error.response.data : error.message);
       setErrorMessage('Error generating interaction ID');
     }
-  };
+  };  
 
   const handleFileUpload = async (event) => {
     const newFiles = Array.from(event.target.files);
