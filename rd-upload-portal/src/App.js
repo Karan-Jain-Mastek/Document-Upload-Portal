@@ -32,7 +32,7 @@ function App() {
       setErrorMessage('Error generating interaction ID');
     }
   };  
-
+   
   const handleFileUpload = async (event) => {
     const newFiles = Array.from(event.target.files);
 
