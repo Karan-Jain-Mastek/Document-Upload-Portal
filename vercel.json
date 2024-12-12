@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server/api/**/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "rd-upload-portal/package.json",
+        "use": "@vercel/react"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/server/api/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/rd-upload-portal/$1"
+      }
+    ]
+  }
+  
