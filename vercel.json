@@ -19,7 +19,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/rd-upload-portal/index.html"
+        "dest": "/rd-upload-portal/$1"
       }
     ]
 }
