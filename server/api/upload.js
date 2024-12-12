@@ -35,7 +35,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 } });
 
 module.exports = (req, res) => {
-  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app/';  // Replace with your frontend URL
+  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app';  // Replace with your frontend URL
 
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', frontendUrl);

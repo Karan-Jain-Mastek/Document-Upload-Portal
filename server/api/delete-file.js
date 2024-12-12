@@ -30,7 +30,7 @@ const containerClient = blobServiceClient.getContainerClient('rd-upload-portal-d
 
 module.exports = async (req, res) => {
   const { interactionId } = req.body;
-  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app/';  // Replace with your frontend URL
+  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app';  // Replace with your frontend URL
 
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', frontendUrl);

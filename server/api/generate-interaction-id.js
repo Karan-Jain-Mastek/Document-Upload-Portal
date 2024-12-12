@@ -11,7 +11,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('MongoDB connection error:', err));
 
 module.exports = async (req, res) => {
-  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app/';
+  const frontendUrl = process.env.FRONTEND_URL || 'https://rd-upload-portal.vercel.app';
 
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', frontendUrl);
