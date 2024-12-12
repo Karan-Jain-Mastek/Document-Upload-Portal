@@ -22,7 +22,7 @@ const Document = mongoose.model('Document', new mongoose.Schema({
   pathSqlFile: { type: String, default: '' },
   sqlStatus: { type: String, enum: ['Success', 'Fail'] },
   status: { type: String }
-}, { collection: 'requirement-documents' }));
+}, { collection: 'requirement-documents' }));   
 
 const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
 const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
