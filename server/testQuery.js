@@ -2,7 +2,7 @@
 const { MongoClient } = require('mongodb');
 
 // Replace with your actual MongoDB connection string
-const uri = "mongodb://localhost:27017"; // Local MongoDB instance, change it if using a different URI
+const uri = "mongodb+srv://karanjain:MASTEK_SEEPZ@rd-upload-portal-cluste.o3iy2.mongodb.net/?retryWrites=true&w=majority&appName=rd-upload-portal-cluster"; // Local MongoDB instance, change it if using a different URI
 
 // Create a new MongoClient instance
 const client = new MongoClient(uri);
@@ -13,7 +13,7 @@ async function run() {
     await client.connect();
 
     // Access the database and the 'interactionid' collection
-    const database = client.db('documentDB'); // Replace with your database name
+    const database = client.db('test'); // Replace with your database name
     const interactionidCollection = database.collection('interactionid'); // The collection to store the counter
 
     // Check if the 'counter' document exists in the 'interactionid' collection

@@ -245,11 +245,7 @@ function App() {
 
         <div className="right-side">
           <div className="grey-box-right">
-            <div className="white-box upper">
-              <pre>{sqlFile}</pre> {/* Render the SQL content */}
-              <button className="copy-sql-btn">COPY SQL</button>
-              <button className="clear-btn" onClick={handleDeleteFile}>CLEAR</button>
-            </div>
+
             <div className="generate-sql-chatbot-row">
               <h3>Generate SQL with Chatbot</h3>
             </div>
