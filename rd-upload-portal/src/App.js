@@ -27,6 +27,7 @@ function App() {
       const response = await axios.get(`${apiUrl}/server/api/generate-interaction-id.js`);
 
       console.log('API response:', response);  // Add this log to inspect the response
+      console.log('API URL:', apiUrl);  // Log API URL to ensure it’s correct
 
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
@@ -53,6 +54,10 @@ function App() {
     try {
       // Fetch the interaction ID from the backend
       const response = await axios.get(`${apiUrl}/server/api/generate-interaction-id.js`);
+
+      console.log('API response:', response);  // Add this log to inspect the response
+      console.log('API URL:', apiUrl);  // Log API URL to ensure it’s correct
+
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
 
@@ -90,6 +95,9 @@ function App() {
         },
       });
 
+      console.log('API response:', response);  // Add this log to inspect the response
+      console.log('API URL:', apiUrl);  // Log API URL to ensure it’s correct
+
       if (uploadResponse.status === 200) {
         console.log('Files uploaded successfully');
       }
@@ -116,6 +124,9 @@ function App() {
       const response = await axios.post(`${apiUrl}/server/api/delete-file.js`, {
         interactionId: fileObj.interactionId,
       });
+
+      console.log('API response:', response);  // Add this log to inspect the response
+      console.log('API URL:', apiUrl);  // Log API URL to ensure it’s correct
 
       if (response.status === 200) {
         console.log('File deleted successfully');
