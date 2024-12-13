@@ -234,7 +234,7 @@ function App() {
                 <div className="timeline">
                   <div className={`timeline-point ${filesUploaded ? 'uploaded' : ''}`}>File Uploaded</div>
                   <div className={`timeline-connector ${documentInProcess ? 'in-process' : ''}`}></div>
-                  <div className={`timeline-point ${documentInProcess ? 'uploaded' : ''}`}>Document In Process</div>
+                  <div className={`timeline-point ${documentInProcess ? 'uploaded' : ''}`}>SQL Generating Consultant Bot</div>
                 </div>
               </div>
             </div>
@@ -245,7 +245,7 @@ function App() {
           <div className="grey-box-right">
 
             <div className="generate-sql-chatbot-row">
-              <h3>SQL Generating Consultant Bot</h3>
+              <h3>Consult Bot for SQL Details</h3>
             </div>
             <div className="white-box middle">
               {files.length > 0 && !yesClicked && (
