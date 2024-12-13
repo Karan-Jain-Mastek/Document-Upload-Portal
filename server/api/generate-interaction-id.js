@@ -7,7 +7,10 @@ const mongoUri = process.env.MONGO_URI;
 
 // MongoDB connection logic
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true, autoReconnect: true })
-  .then(() => console.log('Connected to MongoDB'))
+  .then(() => {mongoose.connection.db.listCollections().toArray(function (err, names) {
+    console.log(names);})
+    console.log('Connected to MongoDB')}
+    )
   .catch(err => console.error('MongoDB connection error:', err));
 
 module.exports = async (req, res) => {
@@ -24,6 +27,7 @@ module.exports = async (req, res) => {
   }
 
   try {
+    console.log("Error!", mongoose.connection.db.collection('interactionid'))
     let counter = await mongoose.connection.db.collection('interactionid').findOne({ _id: 'counter' });
 
     if (!counter || counter.seq === undefined) {
