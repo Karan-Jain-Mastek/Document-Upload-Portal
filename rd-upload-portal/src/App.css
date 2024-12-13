@@ -350,6 +350,7 @@ body {
   display: flex; 
   background-color: white;
   padding: 20px;
+  gap: 20px; /* Add spacing between items */
   margin: 10px 0;
   flex-direction: row; /* Align elements horizontally */
   border-radius: 5px;

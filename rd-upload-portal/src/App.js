@@ -245,7 +245,7 @@ function App() {
           <div className="grey-box-right">
 
             <div className="generate-sql-chatbot-row">
-              <h3>Consult Bot for SQL Details (RD Submission Optional)</h3>
+              <h3>Consult Bot for SQL Details - RD Submission Optional</h3>
             </div>
             <div className="white-box middle">
               {files.length > 0 && !yesClicked && (
