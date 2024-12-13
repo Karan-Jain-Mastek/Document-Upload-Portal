@@ -235,8 +235,6 @@ function App() {
                   <div className={`timeline-point ${filesUploaded ? 'uploaded' : ''}`}>File Uploaded</div>
                   <div className={`timeline-connector ${documentInProcess ? 'in-process' : ''}`}></div>
                   <div className={`timeline-point ${documentInProcess ? 'uploaded' : ''}`}>Document In Process</div>
-                  <div className="timeline-connector"></div>
-                  <div className="timeline-point">SQL Generated</div>
                 </div>
               </div>
             </div>
