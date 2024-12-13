@@ -5,8 +5,7 @@ rd-upload-portal/.env
 server/.env
 
 # ignore the server folder files
-server/server.js
-server/testQuery.js
+server/api/*
 
 # dependencies
 node_modules/
