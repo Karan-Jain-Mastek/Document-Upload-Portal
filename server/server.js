@@ -48,6 +48,12 @@ const containerClient = blobServiceClient.getContainerClient('rd-upload-portal-d
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 } });  // Limit to 10MB
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+      message: 'Backend Server running...'
+  })
+})
+
 // API to get a new Interaction ID
 app.get('/generate-interaction-id', async (req, res) => {
   try {
