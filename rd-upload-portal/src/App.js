@@ -260,7 +260,6 @@ function App() {
                     </button>
                     <button className="button">No</button>
                   </div>
-                  <img src="/rd-upload-portal-chatbot.png" alt="Logo" />
                   {yesClicked && <span>Your RD is getting processed...</span>}
                 </>
               )}
