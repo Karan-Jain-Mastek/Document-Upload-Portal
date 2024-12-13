@@ -6,7 +6,7 @@ const mongoUri = process.env.MONGO_URI;
 // const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/documentDB'; 
 
 // MongoDB connection logic
-mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true, autoReconnect: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
