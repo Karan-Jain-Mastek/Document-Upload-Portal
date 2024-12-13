@@ -25,6 +25,9 @@ function App() {
   const generateInteractionId = async () => {
     try {
       const response = await axios.get(`${apiUrl}/server/api/generate-interaction-id.js`);
+
+      console.log('API response:', response);  // Add this log to inspect the response
+
       const generatedInteractionId = response.data.interactionId;
       setInteractionId(generatedInteractionId);
     } catch (error) {

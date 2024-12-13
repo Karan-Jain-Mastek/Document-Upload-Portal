@@ -1,5 +1,6 @@
 // /api/delete-file.js
 const mongoose = require('mongoose');
+require('dotenv').config();
 const { BlobServiceClient } = require('@azure/storage-blob');
 
 // MongoDB connection
