@@ -247,7 +247,7 @@ function App() {
           <div className="grey-box-right">
 
             <div className="generate-sql-chatbot-row">
-              <h3>Generate SQL with Chatbot</h3>
+              <h3>SQL Generating Consultant Bot</h3>
             </div>
             <div className="white-box middle">
               {files.length > 0 && !yesClicked && (
