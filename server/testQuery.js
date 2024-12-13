@@ -2,7 +2,7 @@
 const { MongoClient } = require('mongodb');
 
 // Replace with your actual MongoDB connection string
-const uri = "mongodb+srv://karanjain:MASTEK_SEEPZ@rd-upload-portal-cluste.o3iy2.mongodb.net/?retryWrites=true&w=majority&appName=rd-upload-portal-cluster"; // Local MongoDB instance, change it if using a different URI
+const uri = process.env.MONGO_URI
 
 // Create a new MongoClient instance
 const client = new MongoClient(uri);
