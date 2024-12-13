@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    console.log("Error!", mongoose.connection.db.collection('interactionid'))
+    console.error("Error!", mongoose.connection.db.collection('interactionid'))
     let counter = await mongoose.connection.db.collection('interactionid').findOne({ _id: 'counter' });
 
     if (!counter || counter.seq === undefined) {
