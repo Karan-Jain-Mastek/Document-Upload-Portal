@@ -207,14 +207,14 @@ function App() {
               <div className="file-upload-container">
                 {files.length > 0 ? (
                   <div className="file-status-box">
-                    <img src="/word-icon.png" alt="Word Icon" className="file-icon" />
+                    <img src="/sql-automation/word-icon.png" alt="Word Icon" className="file-icon" />
                     <div className="file-details">
                       <div className="file-name">{files[0].name}</div>
                       <div className="upload-date">Uploaded on: {files[0].uploadDate}</div>
                       <div className="interaction-id">Interaction ID: {files[0].interactionId}</div>
                     </div>
                     <button className="delete-btn" onClick={handleDeleteFile}>
-                      <img src="/delete.jpg" alt="Delete Icon" className="delete-icon" />
+                      <img src="/sql-automation/delete.jpg" alt="Delete Icon" className="delete-icon" />
                     </button>
                   </div>
                 ) : (
@@ -250,7 +250,7 @@ function App() {
             <div className="white-box middle">
               {files.length > 0 && !yesClicked && (
                 <>
-                  <img src="/rd-upload-portal-chatbot.png" alt="Logo" />
+                  <img src="/sql-automation/rd-upload-portal-chatbot.png" alt="Logo" />
                   <span className="text">Should we process the document?</span>
                   <div className="buttons">
                     <button className="button" onClick={handleYesButtonClick}>

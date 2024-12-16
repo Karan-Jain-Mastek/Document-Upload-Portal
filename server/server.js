@@ -33,11 +33,19 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+
+// Custom origin function
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow all origins
+    callback(null, true);
+  },
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+};
+
+// Apply CORS middleware with the custom options
+app.use(cors(corsOptions));
 
 // Azure Blob Storage setup
 const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
@@ -50,7 +58,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }
 
 app.get("/", (req, res) => {
   res.status(200).json({
-      message: 'Backend Server running...'
+      message: 'Backend Server of Mastek Enterprise AI is running.'
   })
 })
 
