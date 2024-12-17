@@ -67,8 +67,9 @@ body {
 
 .upload-header {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 15px;
+  color: rgb(42, 38, 38); 
 }
 
 .no-file {
@@ -298,6 +299,7 @@ body {
 }
 
 .file-details {
+  margin-left: 3px;
   flex-grow: 1;
 }
 
@@ -358,19 +360,6 @@ body {
   overflow: hidden; /* Prevent overflow */
 }
 
-/* Lower White Box (Empty) */
-.white-box.lower {
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end; /* Align SEND button to the right */
-  margin: 15px 0;
-  border-radius: 5px;
-  height: 20px; 
-  margin-bottom: 0px; 
-  width: 650px; 
-}
-
 .white-box.middle img {
   max-height: 50px; /* Set the maximum height for the image to fit */
   max-width: 50px; /* Set the maximum width for the image to fit */
@@ -403,4 +392,30 @@ body {
 
 .__intelli_main-button {
   margin-right: 25px !important; 
+}
+
+.green-text-box {
+  background-color: #28a745; /* Green background */
+  color: white;              /* White text */
+  padding: 10px;             /* Padding for spacing */
+  margin-right: 615px; 
+  margin-top: 20px;          /* Space between the button and the text box */
+  margin-left: 20px; 
+  font-size: 16px;           /* Font size */
+  border-radius: 5px;        /* Rounded corners */
+  text-align: left;        /* Center the text */
+}
+
+.process-text {
+  margin-top: 25px; 
+  margin-left: 20px; 
+  font-weight: bold; 
+}
+
+.note-text {
+  margin-top: 20px; 
+  margin-left: 20px; 
+  color: rgb(33, 41, 109); 
+  font-weight: bold; 
+  font-size: 16px; 
 }

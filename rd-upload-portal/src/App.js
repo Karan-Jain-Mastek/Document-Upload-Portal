@@ -12,7 +12,10 @@ function App() {
   const [documentInProcess, setDocumentInProcess] = useState(false); // State to track document processing
   const [ftpUploadSuccess, setFtpUploadSuccess] = useState(false); // State to track FTP upload status
   const [yesClicked, setYesClicked] = useState(false); // New state to track if "Yes" was clicked
+  const [fileProcessed, setFileProcessed] = useState(false); // Track processed file status
   const [sqlFile, setSqlFile] = useState(null); // State to manage SQL file content
+  const [processingText, setProcessingText] = useState(''); // New state to store processing text
+  const [processText, setProcessText] = useState('');
   const fileInputRef = useRef(null);
 
   const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // API URL (adjust for Vercel environment)
@@ -35,8 +38,8 @@ function App() {
       console.error('Error generating interaction ID:', error.response ? error.response.data : error.message);
       setErrorMessage('Error generating interaction ID');
     }
-  };  
-   
+  };
+
   const handleFileUpload = async (event) => {
     const newFiles = Array.from(event.target.files);
 
@@ -138,6 +141,7 @@ function App() {
         setErrorMessage('');
         setFtpUploadSuccess(false);
         setYesClicked(false);
+        setFileProcessed(false);
         console.log('File deleted from UI, Azure, and MongoDB');
       } else {
         console.error('Failed to delete file, response status:', response.status);
@@ -158,6 +162,8 @@ function App() {
     if (files.length > 0) {
       setDocumentInProcess(true);
       setYesClicked(true);
+      setProcessingText('Wait for a few seconds before sending RD ID to the Consultant Bot.');
+      setProcessText('Your RD is getting processed...');
 
       const formData = new FormData();
       const fileObj = files[0];
@@ -176,6 +182,8 @@ function App() {
         if (response.status === 200) {
           console.log('File successfully uploaded to FTP server');
           setFtpUploadSuccess(true);
+          setFileProcessed(true); // Set file as processed
+          setProcessText(''); // Clear processing message
         } else {
           console.error('FTP upload failed');
           setErrorMessage('FTP upload failed');
@@ -207,14 +215,14 @@ function App() {
               <div className="file-upload-container">
                 {files.length > 0 ? (
                   <div className="file-status-box">
-                    <img src="/sql-automation/word-icon.png" alt="Word Icon" className="file-icon" />
+                    <img src="/word-icon.png" alt="Word Icon" className="file-icon" />
                     <div className="file-details">
                       <div className="file-name">{files[0].name}</div>
                       <div className="upload-date">Uploaded on: {files[0].uploadDate}</div>
                       <div className="interaction-id">Interaction ID: {files[0].interactionId}</div>
                     </div>
                     <button className="delete-btn" onClick={handleDeleteFile}>
-                      <img src="/sql-automation/delete.jpg" alt="Delete Icon" className="delete-icon" />
+                      <img src="/delete.jpg" alt="Delete Icon" className="delete-icon" />
                     </button>
                   </div>
                 ) : (
@@ -238,19 +246,19 @@ function App() {
                 </div>
               </div>
             </div>
+            {filesUploaded && <div className="note-text">Keep a note of the RD ID.</div>}
           </div>
         </div>
 
         <div className="right-side">
           <div className="grey-box-right">
-
             <div className="generate-sql-chatbot-row">
               <h3>Consult Bot for SQL Details - RD Submission Optional</h3>
             </div>
             <div className="white-box middle">
               {files.length > 0 && !yesClicked && (
                 <>
-                  <img src="/sql-automation/rd-upload-portal-chatbot.png" alt="Logo" />
+                  <img src="/rd-upload-portal-chatbot.png" alt="Logo" />
                   <span className="text">Should we process the document?</span>
                   <div className="buttons">
                     <button className="button" onClick={handleYesButtonClick}>
@@ -258,11 +266,24 @@ function App() {
                     </button>
                     <button className="button">No</button>
                   </div>
-                  {yesClicked && <span>Your RD is getting processed...</span>}
+                </>
+              )}
+              {yesClicked && (
+                <>
+                  <img src="/rd-upload-portal-chatbot.png" alt="Logo" />
+                  <span className="text">{processingText}</span>
                 </>
               )}
             </div>
           </div>
+          {/* Green Text Box for "File has been processed." */}
+          {fileProcessed ? (
+            <div className="green-text-box">
+              File has been processed.
+            </div>
+          ) : (
+            <div className="process-text">{processText}</div> // This will appear until the green box comes.
+          )}
         </div>
       </div>
     </div>
