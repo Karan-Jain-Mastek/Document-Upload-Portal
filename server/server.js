@@ -54,7 +54,7 @@ const containerClient = blobServiceClient.getContainerClient('rd-upload-portal-d
 
 // Multer setup for file upload
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 } });  // Limit to 10MB
+const upload = multer({ storage: storage }); 
 
 app.get("/", (req, res) => {
   res.status(200).json({
